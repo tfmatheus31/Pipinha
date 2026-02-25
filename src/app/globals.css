@@ -12,6 +12,13 @@
   --danger: #dc3545;
   --sidebar-width: 260px;
   --header-height: 60px;
+
+  /* Lúdico - Instituto Pipa */
+  --leaf-green: #4CAF50;
+  --sky-blue: #03A9F4;
+  --sunny-yellow: #FFEB3B;
+  --soft-pink: #F48FB1;
+  --playful-radius: 16px;
 }
 
 * {
@@ -41,10 +48,11 @@ a {
 
 .card {
   background: var(--white);
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  border-radius: var(--playful-radius);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
   padding: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  border: 1px solid #f0f0f0;
 }
 
 .flex {
@@ -82,9 +90,14 @@ a {
 .kpi-card {
   background: var(--white);
   padding: 20px;
-  border-radius: 8px;
-  border-left: 4px solid var(--primary);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  border-radius: var(--playful-radius);
+  border-left: 6px solid var(--primary);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s;
+}
+
+.kpi-card:hover {
+  transform: translateY(-5px);
 }
 
 .kpi-card h3 {

@@ -13,7 +13,6 @@ export default function Dashboard() {
   const [chartData, setChartData] = useState([]);
 
   useEffect(() => {
-    // Simulating API fetch
     setData(dashboardData);
     setChartData(curvaSData);
   }, []);
@@ -66,7 +65,7 @@ export default function Dashboard() {
                     type="monotone"
                     dataKey="previstoAcumulado"
                     name="Previsto"
-                    stroke="#555"
+                    stroke="#888"
                     strokeWidth={2}
                     dot={{ r: 4 }}
                     activeDot={{ r: 6 }}
@@ -75,13 +74,50 @@ export default function Dashboard() {
                     type="monotone"
                     dataKey="executadoAcumulado"
                     name="Executado"
-                    stroke="var(--primary)"
-                    strokeWidth={3}
-                    dot={{ r: 5 }}
-                    activeDot={{ r: 8 }}
+                    stroke="var(--sky-blue)"
+                    strokeWidth={4}
+                    dot={{ r: 6, fill: 'var(--sky-blue)' }}
+                    activeDot={{ r: 9 }}
                   />
                 </LineChart>
               </ResponsiveContainer>
+            </div>
+          </div>
+
+          {/* Seção Impacto Social - Instituto Pipa */}
+          <div className="card impact-card" style={{ background: 'linear-gradient(135deg, #e8f5e9 0%, #ffffff 100%)', border: 'none' }}>
+            <div className="flex justify-between align-center">
+              <div>
+                <h3 className="card-title" style={{ border: 'none', marginBottom: '10px' }}>Instituto PIPA - Impacto Social</h3>
+                <p style={{ fontSize: '0.85rem', color: '#444', maxWidth: '500px' }}>
+                  A Viana e Moura e o Instituto Pipa transformam espaços urbanos em percursos de aprendizado para crianças de 0 a 3 anos.
+                </p>
+              </div>
+              <div className="impact-stats flex gap-20">
+                <div className="stat-pill">
+                  <span className="label">FAMÍLIAS</span>
+                  <span className="val" style={{ color: 'var(--leaf-green)' }}>+500</span>
+                </div>
+                <div className="stat-pill">
+                  <span className="label">VAGAS</span>
+                  <span className="val" style={{ color: 'var(--sky-blue)' }}>120</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="percurso-list flex gap-20" style={{ marginTop: '20px' }}>
+              <div className="percurso-item">
+                <div className="img-placeholder" style={{ background: 'var(--sky-blue)', opacity: 0.2 }}></div>
+                <span>Praça Pipa Caruaru</span>
+              </div>
+              <div className="percurso-item">
+                <div className="img-placeholder" style={{ background: 'var(--leaf-green)', opacity: 0.2 }}></div>
+                <span>Vila Mais Verde</span>
+              </div>
+              <div className="percurso-item">
+                <div className="img-placeholder" style={{ background: 'var(--sunny-yellow)', opacity: 0.2 }}></div>
+                <span>Percurso Infantil Leste</span>
+              </div>
             </div>
           </div>
 
@@ -169,6 +205,40 @@ export default function Dashboard() {
           font-size: 0.7rem;
           color: var(--text-secondary);
         }
+
+        .stat-pill {
+          background: white;
+          padding: 8px 15px;
+          border-radius: 30px;
+          text-align: center;
+          box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .stat-pill .label { display: block; font-size: 0.6rem; color: #888; font-weight: bold; }
+        .stat-pill .val { font-size: 1.1rem; font-weight: 800; }
+
+        .percurso-list {
+          margin-top: 20px;
+          display: flex;
+          gap: 15px;
+        }
+
+        .percurso-item {
+          flex: 1;
+          background: white;
+          padding: 12px;
+          border-radius: 12px;
+          text-align: center;
+          border: 1px dashed #e0e0e0;
+        }
+
+        .percurso-item .img-placeholder {
+          height: 60px;
+          border-radius: 8px;
+          margin-bottom: 8px;
+        }
+
+        .percurso-item span { font-size: 0.75rem; font-weight: 700; color: #555; }
       `}</style>
     </>
   );
